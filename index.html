@@ -1,11 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Exercise 2</title>
+	<title>Exercise</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <center>
-        <h1>Kalkulator</h1>
-    </center>
+	<div class="kalkulator" align="center">
+		<h1>Kalkulator</h1>
+		<input type="text" id="bilangan1" class="input-text" placeholder="Angka Pertama" autocomplete="off" autofocus required>
+		
+		<input type="text" id="bilangan2" class="input-text" placeholder="Angka Kedua" autocomplete="off" required>
+		<br><br>
+		<button class="tombol" onclick="tambah(bilangan1.value, bilangan2.value)">(+) Tambah</button>
+		<button class="tombol" onclick="kurang(bilangan1.value, bilangan2.value)">(-) Kurang</button>
+		<button class="tombol" onclick="kali(bilangan1.value, bilangan2.value)">(x) Kali</button>
+		<button class="tombol" onclick="bagi(bilangan1.value, bilangan2.value)">(:) Bagi</button>
+		<button class="tombol" onclick="modulus(bilangan1.value, bilangan2.value)">(%) Modulus</button>
+		<br><br>
+		<h2>Hasil :</h2>
+		<h2 id="hasil"></h2>
+	</div>
+
+	<script>
+		function tambah(val1, val2) {
+			var hasil;
+			hasil = parseInt(val1) + parseInt(val2);
+			document.getElementById("hasil").innerHTML = hasil;
+			console.log(hasil);
+		}
+
+		function kurang(val1, val2) {
+			var hasil;
+			hasil = parseInt(val1) - parseInt(val2);
+			document.getElementById("hasil").innerHTML = hasil;
+			console.log(hasil);
+		}
+
+		function kali(val1, val2) {
+			var hasil;
+			hasil = parseInt(val1) * parseInt(val2);
+			document.getElementById("hasil").innerHTML = hasil;
+			console.log(hasil);
+		}
+
+		function bagi(val1, val2) {
+			var hasil; 
+			hasil = parseInt(val1) / parseInt(val2);
+			document.getElementById("hasil").innerHTML = hasil;
+			console.log(hasil);
+		}
+
+		function modulus(val1, val2) {
+			var hasil; 
+			hasil = parseInt(val1) % parseInt(val2);
+			document.getElementById("hasil").innerHTML = hasil;
+			console.log(hasil);
+		}
+	</script>
 </body>
 </html>
